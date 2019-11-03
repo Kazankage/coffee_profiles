@@ -21,12 +21,9 @@ class UserController < ApplicationController
   
   post '/login' do 
      login(params[:username], params[:password])
-     erb :posts
+     redirect '/login/posts'
    end
   
-  
-=begin post '/sessions' do
-    login(params[:username], params[:password])
-    erb :posts
-=end  end
+
+
 end

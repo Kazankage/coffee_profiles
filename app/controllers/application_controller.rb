@@ -13,37 +13,53 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get '/login/posts' do
+      redirect '/posts'
+  end
+  
   get '/posts' do
-      if !logged_in?
-      erb :login
-    else 
-      erb :posts
-    end
+    erb :posts
   end
   
   post '/posts' do
-   erb :display
+    redirect '/display'
   end
-
-  get '/edit' do
-    if !logged_in?
-       erb :login
-    else
-      post = Post.find(params[:user_id])
-      if post.user_id == current_user.id
-      "An edit post"
-    end
+  
+  get '/display' do
+    erb :display
   end
+  
+   get '/display/edit' do
+     erb :edit
+    #redirect '/posts/:id/edit'
   end
   
 
-  get '/sessions/posts'do
-    if !logged_in?
-      erb :login
+  get '/edit' do
+    erb :error
+  end
+  
+  post '/edit' do
+    erb :edit
+  end
+  
+  get '/edit/error' do
+    erb :error
+  end
+  
+  get '/posts/:id/edit' do
+=begin    if !logged_in?
+      erb :display
     else
-      erb :posts
-    end
- end 
+=end      
+      if post = current_user.post.find_by(params[:id])
+      "Tryin to fix this"
+    else
+      redirect '/posts'
+   end
+ #end
+  end
+
  
   get '/logout' do
     erb :welcome
