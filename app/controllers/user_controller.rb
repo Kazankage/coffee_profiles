@@ -25,8 +25,8 @@ class UserController < ApplicationController
    end
   
   
- post '/sessions' do
+=begin post '/sessions' do
     login(params[:username], params[:password])
     erb :posts
-  end
+=end  end
 end
