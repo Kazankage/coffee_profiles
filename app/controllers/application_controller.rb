@@ -47,17 +47,17 @@ class ApplicationController < Sinatra::Base
     erb :error
   end
   
-  get '/posts/:id/edit' do
-=begin    if !logged_in?
-      erb :display
-    else
-=end      
+  get '/posts/:user_id/edit' do
+# if !logged_in?
+ #     erb :display
+  #  else
+      
       if post = current_user.post.find_by(params[:id])
-      "Tryin to fix this"
+      erb :edit_posts
     else
       redirect '/posts'
-   end
- #end
+      end
+#  end
   end
 
  
@@ -89,5 +89,13 @@ class ApplicationController < Sinatra::Base
     end
   
  end 
+ 
+ def clear_house
+   User.delete_all
+ end
+ 
+ def fix_it_up
+   User.update
+ end
 
 end
