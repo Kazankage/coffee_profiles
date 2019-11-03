@@ -1,8 +1,8 @@
 <h5><i>~~~Coffee Profiles~~~</b></i></h5>
 <div align="right">
 <h5><span id="datetime"></span></h5>
+ <h5><a href="/logout">Log Out</a></h5></center>
 </div>
-
 
 <script>
 var dt = new Date();
@@ -10,11 +10,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </script>
 <html>
 <body background="https://www.verywellhealth.com/thmb/yeH4u7-xV2mfw1M_0MctAv_EWsw=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/iStock-580106866-58cf635a3df78c3c4f84250c.jpg">
+  
+  
+<h3>Login</h3>
+<form action="/login" method="POST">
+  <input type="text" name="username" placeholder="Username:">
+  <input type="password" name="password" placeholder="Password:">
+  <input type="submit" value="Let's Get Brewin!">
+</form>
 
-</body>
-</html><center>
-<h1>Welcome to Coffee Profiles!</h1>
-<h3>Your guide to the world of coffee.</h3>
-<img src ="https://coffeeandhealth.org/wp-content/uploads/2015/10/Visual-2.png"alt="Image" height="400" width="400">
-
-<p> <br><h5> Please <a href="/signup">Sign Up</a> or <a href="/login">Log In</a> to continue.</h5></center>
+<br>
+<h5> Dont have a profile? No problem! <a href="/signup">Sign Up</a> for free!</h5>

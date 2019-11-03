@@ -1,0 +1,132 @@
+<h5><i>~~~Coffee Profiles~~~</b></i></h5>
+<div align="right">
+ 
+<h5><span id="datetime"></span></h5>
+ <h5><a href="/logout">Log Out</a></h5></center>
+</div>
+
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+<html>
+<body background="https://www.verywellhealth.com/thmb/yeH4u7-xV2mfw1M_0MctAv_EWsw=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/iStock-580106866-58cf635a3df78c3c4f84250c.jpg">
+
+<h2>Welcome to your coffee profile!</h2>
+
+
+<h3>Let's get brewin!</h3>
+
+<form action='/posts' method="POST">
+
+  <p>
+<label>Coffee Name:</label><br><input type="text" name="name" placeholder=" Enter name of coffee">
+<br>
+<h3>Tell us about your coffee:</h3>
+<br>
+<h4>How did you prepare your coffee?</h4>
+<textarea name="message-prepare"></textarea>
+<br>
+<br>
+<%# <input type="checkbox" name="brew-type-1" value="drip"> Drip<br>
+<input type="checkbox" name="brew-type-2" value="pour-over"> Pour-Over<br>
+<input type="checkbox" name="brew-type-3" value="turkish"> Turkish<br>
+<input type="checkbox" name="brew-type-4" value="french-press"> French Press<br>
+<input type="checkbox" name="brew-type-5" value="cold-brew"> Cold Brew<br>
+<input type="checkbox" name="brew-type-6" value="other"> Other<br><br>%>
+<h4>Region:</h4>
+<br>
+<h4>What region did your coffee from?</h4>
+<textarea name="region"></textarea>
+<br>
+<br>
+<%# <input type="checkbox" name="region-1" value="africa"> Africa<br>
+<input type="checkbox" name="region-2" value="latin-america"> Latin America<br>
+<input type="checkbox" name="region-3" value="asia"> Asia<br>
+<input type="checkbox" name="region-4" value="mixed"> Mixed<br>
+<br> %>
+<h4>Aroma Notes:</h4> 
+<br>
+<h4>What does your coffee smell like?</h4>
+<br>
+<h4>Any specific aroma notes?</h4>
+<textarea name="aroma"></textarea>
+<br>
+<br>
+<%# <input type="checkbox" name="smell-1" value="flowery"> Flowery<br>
+<input type="checkbox" name="smell-2" value="fruity"> Fruity<br>
+<input type="checkbox" name="smell-3" value="herby"> Herby<br>
+<input type="checkbox" name="smell-4" value="nutty"> Nutty<br>
+<input type="checkbox" name="smell-5" value="caramelly"> Caramelly<br>
+<input type="checkbox" name="smell-6" value="chocolatey"> Chocolatey<br>
+<input type="checkbox" name="smell-7" value="resinous"> Resinous<br>
+<input type="checkbox" name="smell-8" value="spicy"> Spicy<br>
+<input type="checkbox" name="smell-9" value="carbony"> Carbony<br>
+<input type="checkbox" name="smell-10" value="other"> Other<br> %>
+
+<h4>Flavour Notes:</h4> 
+<br>
+<h4>What does your coffee taste like?</h4>
+<br>
+<h4>Any specific flavour notes?</h4>
+<textarea name="flavour"></textarea>
+<br>
+<br>
+<%# <input type="checkbox" name="taste-1" value="sour"> Sour<br>
+<input type="checkbox" name="taste-2" value="sweet"> Sweet<br>
+<input type="checkbox" name="taste-3" value="salt"> Salt<br>
+<input type="checkbox" name="taste-4" value="bitter"> Bitter<br>
+<input type="checkbox" name="taste-5" value="other"> Other<br>
+<br>
+%>
+
+
+<h4>Acidity Notes:</h4> 
+<br>
+<h4>How acidic was your coffee?</h4>
+<textarea name="acidity"></textarea>
+<br>
+<%#
+<select name="acidity">
+  <option value="--"> --</option>
+  <option value="tangy"> Tangy</option>
+  <option value="tarty"> Tarty</option>
+  <option value="bright"> Bright</option>
+  <option value="crisp"> Crisp</option>
+  <option value="smooth"> Smooth</option>
+  <option value="other"> Other</option>
+</select>
+<br> %>
+<br>
+<br>
+<h4>Body Notes:</h4> 
+<br>
+<h4>Describe the body of your coffee:</h4>
+<textarea name="body"></textarea>
+<%#
+<select name="body">
+  <option value="--"> --</option>
+  <option value="light"> Light</option>
+  <option value="full"> Full</option>
+  <option value="other"> Other</option>
+</select> %>
+
+<br>
+<br>
+
+<h4>Food Notes:</h4>
+<br>
+<h4>Any food pairings? How did it affect the taste?</h4>
+<textarea name="food"></textarea>
+<br>
+<br>
+
+<h4>Additional Notes:</h4>
+<textarea name="notes"></textarea><br>
+
+<br>
+<br>
+<br>
+  <input type="submit" name="submit" value="submit">
+</form>
