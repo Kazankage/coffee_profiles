@@ -90,12 +90,22 @@ class ApplicationController < Sinatra::Base
   
  end 
  
- def clear_house
-   User.delete_all
+ def clear_info
+    User.create(username: "username")
+  username= User.find_by(username: "Username")
+  username.delete
  end
  
+ def clear_info
+    User.delete_all
+ end
+
+ 
  def fix_it_up
-   User.update
+  User.create(username: "old_username")
+  username = User.find_by(username: "old_username")
+  username.update(username: "new")
+
  end
 
 end
