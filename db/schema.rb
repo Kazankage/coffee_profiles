@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191103185222) do
+ActiveRecord::Schema.define(version: 20191104030301) do
+
+  create_table "coffee_log", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.integer "coffee_profile"
+    t.integer "users_id"
+  end
+
+  create_table "coffee_profile", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "prepare"
+    t.string  "region"
+    t.string  "aroma"
+    t.string  "flavour"
+    t.string  "acidity"
+    t.string  "body"
+    t.string  "food"
+    t.string  "notes"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
