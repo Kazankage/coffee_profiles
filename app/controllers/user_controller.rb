@@ -24,6 +24,8 @@ class UserController < ApplicationController
      redirect '/login/posts'
    end
   
-
+  get '/logout' do
+    erb :welcome
+  end
 
 end

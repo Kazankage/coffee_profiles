@@ -12,29 +12,11 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :welcome
   end
-
-  get '/login/posts' do
-      redirect '/posts'
+  
+  get '/show' do
+    erb :show
   end
   
-  get '/posts' do
-    erb :posts
-  end
-  
-  post '/posts' do
-    redirect '/display'
-  end
-  
-  get '/display' do
-    erb :display
-  end
-  
-   get '/display/edit' do
-     erb :edit
-    #redirect '/posts/:id/edit'
-  end
-  
-
   get '/edit' do
     erb :error
   end
@@ -46,24 +28,7 @@ class ApplicationController < Sinatra::Base
   get '/edit/error' do
     erb :error
   end
-  
-  get '/posts/:user_id/edit' do
-# if !logged_in?
- #     erb :display
-  #  else
-      
-      if post = current_user.post.find_by(params[:id])
-      erb :edit_posts
-    else
-      redirect '/posts'
-      end
-#  end
-  end
 
- 
-  get '/logout' do
-    erb :welcome
-  end
   
   helpers do
     def logged_in?
