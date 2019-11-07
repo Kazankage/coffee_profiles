@@ -13,23 +13,6 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
   
-=begin get '/show' do
-    erb :show
-  end
-  
-  get '/edit' do
-    erb :error
-  end
-  
-  post '/edit' do
-    erb :edit
-  end
-  
-  get '/edit/error' do
-    erb :error
-  end
-
-=end  
 
   helpers do
     def logged_in?

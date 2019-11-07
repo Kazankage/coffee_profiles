@@ -11,7 +11,8 @@ class UserController < ApplicationController
     @user.save
     @current_user = User.find_by(:username => session[:username]) if session[:username]
     @current_user = @user
-      erb :posts
+   
+      erb :login
    # else
     #  erb :signup
    # end

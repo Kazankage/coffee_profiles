@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
   
     post '/posts' do
-    
      @post = Post.new
     @post.user_id  = current_user.id
     @post.name  = params[:name]
@@ -20,6 +19,7 @@ class PostsController < ApplicationController
     @post.notes  = params[:notes]
     if @post.save
        redirect "/posts/#{@post.id}"
+       binding.pry
     end
   end
   
