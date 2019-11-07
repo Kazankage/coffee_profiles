@@ -32,7 +32,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 
 <p> <br><h5> Would you like to edit your post? </h5>
-<form action="/edit" method="GET">
+<form action="/posts/<%= @post.id %>/edit" method="GET">
   <input id="hidden" type="hidden" name="_method" value="edit">
   <input type="submit" value="Edit">
 </form>

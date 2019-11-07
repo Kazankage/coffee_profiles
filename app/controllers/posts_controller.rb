@@ -44,12 +44,18 @@ end
 
   delete '/posts/:id/delete' do 
     @post = Post.find_by_id(params[:id])
+     if post = current_user.post.find(params[:id])
     @post.delete
-    redirect '/posts/delete'
+    erb :delete
   end
+end
   
-  get '/posts/delete' do
-  erb :delete
+  get '/posts/:id/delete' do
+     @post = Post.find_by_id(params[:id])
+      if post = current_user.post.find(params[:id])
+    @post.delete
+    erb :delete
+end
 end
   
 =begin    get '/posts/:id/edit' do
