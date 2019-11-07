@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     erb :show
 
   end
+ 
+ get '/edit' do
+  erb :edit
+end 
   
   get '/posts/:id/edit' do
 
@@ -38,10 +42,15 @@ class PostsController < ApplicationController
   end
 end
 
-  delete '/posts/:id' do
-    Post.get(params[:id]).destroy
-    redirect'/'
+  delete '/posts/:id/delete' do 
+    @post = Post.find_by_id(params[:id])
+    @post.delete
+    redirect '/posts/delete'
   end
+  
+  get '/posts/delete' do
+  erb :delete
+end
   
 =begin    get '/posts/:id/edit' do
 # if !logged_in?
