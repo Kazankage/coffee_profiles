@@ -21,7 +21,7 @@ class UserController < ApplicationController
   
   post '/login' do 
      login(params[:username], params[:password])
-     redirect '/login/posts'
+     redirect '/posts/new'
    end
   
   get '/logout' do

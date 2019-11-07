@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
   
-  get '/show' do
+=begin get '/show' do
     erb :show
   end
   
@@ -29,7 +29,8 @@ class ApplicationController < Sinatra::Base
     erb :error
   end
 
-  
+=end  
+
   helpers do
     def logged_in?
       !!@current_user

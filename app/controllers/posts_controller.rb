@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
-    
-    
-    get '/login/posts' do
-      redirect '/posts'
-  end
   
-    get '/posts' do
+    get '/posts/new' do
     erb :posts
   end
   
@@ -29,15 +24,26 @@ class PostsController < ApplicationController
     get '/posts/:id' do
       @post = Post.find_by(id: params[:id])
     erb :show
+
   end
   
-  get '/posts/edit' do
+  get '/posts/:id/edit' do
+
+     @post = Post.find_by(id: params[:id])
+      if post = current_user.post.find(params[:id])
      erb :edit
-    #redirect '/posts/:id/edit'
+    else 
+      :posts
+
+  end
+end
+
+  delete '/posts/:id' do
+    Post.get(params[:id]).destroy
+    redirect'/'
   end
   
-  
-    get '/posts/:id/edit' do
+=begin    get '/posts/:id/edit' do
 # if !logged_in?
  #     erb :display
   #  else
@@ -48,6 +54,7 @@ class PostsController < ApplicationController
       redirect '/posts'
       end
 #  end
-  end
+=end end
+ 
   
 end
