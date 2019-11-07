@@ -8,11 +8,13 @@ class UserController < ApplicationController
     @user = User.new
     @user.username = params[:username]
     @user.password = params[:password]
-    if @user.save
+    @user.save
+    @current_user = User.find_by(:username => session[:username]) if session[:username]
+    @current_user = @user
       erb :posts
-    else
-      erb :signup
-    end
+   # else
+    #  erb :signup
+   # end
   end
   
   get '/login' do
@@ -25,6 +27,7 @@ class UserController < ApplicationController
    end
   
   get '/logout' do
+    logout!
     erb :welcome
   end
 

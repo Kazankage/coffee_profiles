@@ -1,6 +1,6 @@
 <h5><i>~~~Coffee Profiles~~~</b></i></h5>
+<h5>Current User: <%= @current_user.username %></h5>
 <div align="right">
- 
 <h5><span id="datetime"></span></h5>
  <h5><a href="/logout">Log Out</a></h5></center>
 </div>
@@ -13,7 +13,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 <html>
 <body background="https://www.verywellhealth.com/thmb/yeH4u7-xV2mfw1M_0MctAv_EWsw=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/iStock-580106866-58cf635a3df78c3c4f84250c.jpg">
 
-<h2>Welcome to your coffee profile!</h2>
+<h2>Welcome to your coffee profile <%= @current_user.username %>!</h2>
 
 
 <h3>Let's get brewin!</h3>
