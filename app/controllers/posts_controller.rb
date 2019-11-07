@@ -45,6 +45,27 @@ end
   end
 end
 
+get '/posts/:id/edit' do  #load edit form
+    @post = Post.find_by_id(params[:id])
+    erb :edit
+  end
+ 
+patch '/posts/:id' do #edit action
+  @post = Post.find_by_id(params[:id])
+    @post.user_id  = current_user.id
+    @post.name  = params[:name]
+    @post.prepare  = params[:prepare]
+    @post.region  = params[:region]
+    @post.aroma  = params[:aroma]
+    @post.flavour  = params[:flavour]
+    @post.acidity  = params[:acidity]
+    @post.body  = params[:body]
+    @post.food  = params[:food]
+    @post.notes  = params[:notes]
+  @post.save
+  redirect to "/posts/#{@post.id}"
+end
+
   delete '/posts/:id/delete' do 
     @current_user = User.find_by(:username => session[:username]) if session[:username]
     @post = Post.find_by_id(params[:id])
@@ -63,18 +84,6 @@ end
 end
 end
   
-=begin    get '/posts/:id/edit' do
-# if !logged_in?
- #     erb :display
-  #  else
-      
-      if post = current_user.post.find_by(params[:id])
-      erb :edit_posts
-    else
-      redirect '/posts'
-      end
-#  end
-=end end
- 
+
   
 end

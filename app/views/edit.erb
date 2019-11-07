@@ -17,8 +17,59 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 <div align="center">
 
 <h1>ONLY YOU CAN EDIT YOUR POSTS</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Uncle_Sam_style_Smokey_Bear_Only_You.jpg" height=600 width=400> </div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Uncle_Sam_style_Smokey_Bear_Only_You.jpg" height=200 width=150> </div>
+<br>
+<form action="/posts/<%= @post.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+<h4>Coffee Name:</h4>
+<input type="text" name="name" placeholder=" Enter name of coffee">
+<br>
+<h3>Tell us about your coffee:</h3>
+<br>
+<h4>How did you prepare your coffee?</h4>
+<textarea name="prepare"></textarea>
+<br>
+<br><h4>Region:</h4>
+<h4>What region did your coffee from?</h4>
+<textarea name="region"></textarea>
+<br>
+<br>
+<h4>Aroma Notes:</h4> 
+<h4>What does your coffee smell like?</h4>
+<br>
+<h4>Any specific aroma notes?</h4>
+<textarea name="aroma"></textarea>
+<br>
+<br>
+<h4>Flavour Notes:</h4> 
+<h4>What does your coffee taste like?</h4>
+<br>
+<h4>Any specific flavour notes?</h4>
+<textarea name="flavour"></textarea>
+<br>
+<br>
+<h4>Acidity Notes:</h4> 
+<h4>How acidic was your coffee?</h4>
+<textarea name="acidity"></textarea>
+<br>
+<br>
+<h4>Body Notes:</h4> 
+<h4>Describe the body of your coffee:</h4>
+<textarea name="body"></textarea>
+<br>
+<br>
+<h4>Food Notes:</h4>
+<h4>Any food pairings? How did it affect the taste?</h4>
+<textarea name="food"></textarea>
+<br>
+<br>
+<h4>Additional Notes:</h4>
+<textarea name="notes"></textarea><br>
 
+  <input type="submit" value="Submit Edit">
+</form>
+<br>
+<br>
 
 <h5>Would you like to delete your post? </h5>
 
