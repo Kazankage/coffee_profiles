@@ -38,9 +38,9 @@ end
     @current_user = User.find_by(:username => session[:username]) if session[:username]
      @post = Post.find_by(id: params[:id])
       if post = current_user.post.find(params[:id])
-     erb :edit
+         redirect '/edit'
     else 
-      :posts
+      erb :posts
 
   end
 end
