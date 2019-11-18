@@ -9,8 +9,8 @@ class UserController < ApplicationController
     @user.username = params[:username]
     @user.password = params[:password]
     @user.save
-   # @current_user = User.find_by(:username => session[:username]) if session[:username]
-    @user = @current_user
+    @current_user = User.find_by(:username => session[:username]) if session[:username]
+    current_user = @user
    
       erb :posts
    # else
