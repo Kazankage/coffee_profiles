@@ -1,5 +1,5 @@
 <h5><i>~~~Coffee Profiles~~~</b></i></h5>
-<h5>Current User: <%= @current_user.username %></h5>
+<h5>Current User: <%= current_user.username %></h5>
 <div align="right">
  
 <h5><span id="datetime"></span></h5>
@@ -22,49 +22,50 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 <form action="/posts/<%= @post.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
 <h4>Coffee Name:</h4>
-<input type="text" name="name" placeholder=" Enter name of coffee">
+<input type="text" name="name" value= "<%= @post.name %>" placeholder=" Enter name of coffee">
 <br>
 <h3>Tell us about your coffee:</h3>
 <br>
 <h4>How did you prepare your coffee?</h4>
-<textarea name="prepare"></textarea>
+
+<textarea name="prepare"><%= @post.prepare %></textarea>
 <br>
 <br><h4>Region:</h4>
 <h4>What region did your coffee from?</h4>
-<textarea name="region"></textarea>
+<textarea name="region"><%= @post.region %></textarea>
 <br>
 <br>
 <h4>Aroma Notes:</h4> 
 <h4>What does your coffee smell like?</h4>
 <br>
 <h4>Any specific aroma notes?</h4>
-<textarea name="aroma"></textarea>
+<textarea name="aroma"><%= @post.aroma %></textarea>
 <br>
 <br>
 <h4>Flavour Notes:</h4> 
 <h4>What does your coffee taste like?</h4>
 <br>
 <h4>Any specific flavour notes?</h4>
-<textarea name="flavour"></textarea>
+<textarea name="flavour"><%= @post.flavour %></textarea>
 <br>
 <br>
 <h4>Acidity Notes:</h4> 
 <h4>How acidic was your coffee?</h4>
-<textarea name="acidity"></textarea>
+<textarea name="acidity"><%= @post.acidity %></textarea>
 <br>
 <br>
 <h4>Body Notes:</h4> 
 <h4>Describe the body of your coffee:</h4>
-<textarea name="body"></textarea>
+<textarea name="body"><%= @post.body %></textarea>
 <br>
 <br>
 <h4>Food Notes:</h4>
 <h4>Any food pairings? How did it affect the taste?</h4>
-<textarea name="food"></textarea>
+<textarea name="food"><%= @post.food %></textarea>
 <br>
 <br>
 <h4>Additional Notes:</h4>
-<textarea name="notes"></textarea><br>
+<textarea name="notes"><%= @post.notes %></textarea><br>
 
   <input type="submit" value="Submit Edit">
 </form>

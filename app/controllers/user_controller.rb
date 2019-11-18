@@ -9,10 +9,10 @@ class UserController < ApplicationController
     @user.username = params[:username]
     @user.password = params[:password]
     @user.save
-    @current_user = User.find_by(:username => session[:username]) if session[:username]
-    @current_user = @user
+   # @current_user = User.find_by(:username => session[:username]) if session[:username]
+    @user = @current_user
    
-      erb :login
+      erb :posts
    # else
     #  erb :signup
    # end
@@ -24,7 +24,7 @@ class UserController < ApplicationController
   
   post '/login' do 
      login(params[:username], params[:password])
-     redirect '/posts/new'
+    erb :posts
    end
   
   get '/logout' do

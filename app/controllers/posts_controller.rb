@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
     get '/posts/new'do
-     @current_user = User.find_by(:username => session[:username]) if session[:username]
+     @current_user# = User.find_by(:username => session[:username]) if session[:username]
     erb :posts
   end
   
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
   
     get '/posts/:id' do
-      @current_user = User.find_by(:username => session[:username]) if session[:username]
+      #@current_user = User.find_by(:username => session[:username]) if session[:username]
       @post = Post.find_by(id: params[:id])
     erb :show
 
@@ -35,10 +35,10 @@ class PostsController < ApplicationController
 end 
   
   get '/posts/:id/edit' do
-    @current_user = User.find_by(:username => session[:username]) if session[:username]
+    #current_user = User.find_by(:username => session[:username]) if session[:username]
      @post = Post.find_by(id: params[:id])
-      if post = current_user.post.find(params[:id])
-         redirect '/edit'
+      if @post == current_user.posts.find(params[:id])
+          erb :edit
     else 
       erb :posts
 
@@ -67,18 +67,18 @@ patch '/posts/:id' do #edit action
 end
 
   delete '/posts/:id/delete' do 
-    @current_user = User.find_by(:username => session[:username]) if session[:username]
+    #@current_user = User.find_by(:username => session[:username]) if session[:username]
     @post = Post.find_by_id(params[:id])
-     if post = current_user.post.find(params[:id])
+     if @post == current_user.posts.find(params[:id])
     @post.delete
     erb :delete
   end
 end
   
   get '/posts/:id/delete' do
-     @current_user = User.find_by(:username => session[:username]) if session[:username]
+     #@current_user = User.find_by(:username => session[:username]) if session[:username]
      @post = Post.find_by_id(params[:id])
-      if post = current_user.post.find(params[:id])
+      if @post = current_user.posts.find(params[:id])
     @post.delete
     erb :delete
 end

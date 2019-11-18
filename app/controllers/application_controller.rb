@@ -33,11 +33,10 @@ class ApplicationController < Sinatra::Base
      end
      
     def current_user
-      @current_user ||  User.find_by(:username => session[:username]) if session[:username]
+     User.find_by(:username => session[:username]) if session[:username]
       #User.find(session[:username])
     end
-  
- end 
+   end 
  
  def clear_info
     User.create(username: "username")
