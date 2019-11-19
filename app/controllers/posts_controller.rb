@@ -19,7 +19,6 @@ class PostsController < ApplicationController
     @post.notes  = params[:notes]
     if @post.save
        redirect "/posts/#{@post.id}"
-       binding.pry
     end
   end
   
