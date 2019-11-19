@@ -5,17 +5,13 @@ class UserController < ApplicationController
   end
   
   post '/signup' do
-    @user = User.new
-    @user.username = params[:username]
-    @user.password = params[:password]
-    @user.save
-    @current_user = User.find_by(:username => session[:username]) if session[:username]
-    current_user = @user
-   
-      erb :login
-   # else
-    #  erb :signup
-   # end
+    @user = User.new(params)
+    if @user.save  
+      session[:username] = @user.username
+      redirect '/posts/new'
+    else 
+      erb :signup
+    end
   end
   
   get '/login' do

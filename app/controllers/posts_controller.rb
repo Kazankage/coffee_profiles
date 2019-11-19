@@ -19,6 +19,8 @@ class PostsController < ApplicationController
     @post.notes  = params[:notes]
     if @post.save
        redirect "/posts/#{@post.id}"
+    else
+      erb :posts
     end
   end
   
