@@ -20,7 +20,7 @@ class UserController < ApplicationController
   
   post '/login' do 
      login(params[:username], params[:password])
-    erb :posts
+    erb :home
    end
   
   get '/logout' do

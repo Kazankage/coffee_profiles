@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   
+    get '/home' do
+      erb :home
+    end
+    
     get '/posts/new'do
      @current_user# = User.find_by(:username => session[:username]) if session[:username]
     erb :posts
