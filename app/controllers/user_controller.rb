@@ -8,7 +8,7 @@ class UserController < ApplicationController
     @user = User.new(params)
     if @user.save  
       session[:username] = @user.username
-      redirect '/posts/new'
+      redirect '/home'
     else 
       erb :signup
     end
